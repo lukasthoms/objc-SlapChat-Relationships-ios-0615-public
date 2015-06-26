@@ -8,6 +8,7 @@
 
 #import "FISDataStore.h"
 #import "Message.h"
+#import "Recipient.h"
 
 @implementation FISDataStore
 @synthesize managedObjectContext = _managedObjectContext;
@@ -92,28 +93,47 @@
 
 - (void)generateTestData
 {
-    Message *messageOne = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
+//    Recipient *lukas = [NSEntityDescription insertNewObjectForEntityForName:@"Recipient" inManagedObjectContext:self.managedObjectContext];
+//    
+//    lukas.name = @"Lukas";
+//    lukas.email = @"Lukas@stho.ms";
+//    lukas.phoneNumber = @"309-269-41613";
+//    lukas.twitterHandle = @"lukasthoms";
+//    
+//    Recipient *tyler = [NSEntityDescription insertNewObjectForEntityForName:@"Recipient" inManagedObjectContext:self.managedObjectContext];
+//    
+//    tyler.name = @"Tyler Fields";
+//    tyler.email = @"TDfields@gmail.com";
+//    tyler.phoneNumber = @"4446264345";
+//    tyler.twitterHandle = @"TD_Fields";
     
-    messageOne.content = @"Message 1";
-    messageOne.createdAt = [NSDate date];
-    
-    Message *messageTwo = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
-    messageTwo.content = @"Message 2";
-    messageTwo.createdAt = [NSDate date];
-    
-    Message *messageThree = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
-    
-    messageThree.content = @"Message 3";
-    messageThree.createdAt = [NSDate date];
-    
-    [self saveContext];
-    [self fetchData];
+//    
+//    Message *messageOne = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
+//    
+//    messageOne.content = @"Message 1";
+//    messageOne.createdAt = [NSDate date];
+//    
+//    Message *messageTwo = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
+//    messageTwo.content = @"Message 2";
+//    messageTwo.createdAt = [NSDate date];
+//    
+//    Message *messageThree = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
+//    
+//    messageThree.content = @"Message 3";
+//    messageThree.createdAt = [NSDate date];
+//    
+//    [lukas addMessageObject:messageOne];
+//    [lukas addMessageObject:messageTwo];
+//    [tyler addMessageObject:messageThree];
+//    
+//    [self saveContext];
+//    [self fetchData];
 }
 
 #pragma mark - Helpers
 
-- (Message *)createMessage
-{
-    return [Message messageWithContext:self.managedObjectContext];
-}
+//- (Message *)createMessage
+//{
+//    return [Message messageWithContext:self.managedObjectContext];
+//}
 @end

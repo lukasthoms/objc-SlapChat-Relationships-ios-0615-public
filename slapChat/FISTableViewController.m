@@ -31,6 +31,10 @@
     [super viewDidLoad];
 
     self.store = [FISDataStore sharedDataStore];
+    self.messagesArray = [@[] mutableCopy];
+    for (Message *message in self.managedRecipient.message) {
+        [self.messagesArray addObject:message];
+    }
 
 }
 
@@ -59,7 +63,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.store.messages count];
+    return [self.messagesArray count];
 }
 
 
@@ -67,7 +71,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"basiccell" forIndexPath:indexPath];
     
-    Message *eachMessage = self.store.messages[indexPath.row];
+    Message *eachMessage = self.messagesArray[indexPath.row];
     
     cell.textLabel.text = eachMessage.content;
     

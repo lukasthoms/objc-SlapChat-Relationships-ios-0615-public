@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "FISDataStore.h"
+#import "Recipient.h"
+#import "Message.h"
 
 
 @interface FISTableViewController : UITableViewController
@@ -15,5 +17,7 @@
 
 @property (strong, nonatomic) NSArray *managedMessageObjects;
 @property (strong, nonatomic) FISDataStore *store;
+@property (strong, nonatomic) Recipient *managedRecipient;
+@property (strong, nonatomic) NSMutableArray *messagesArray;
 
 @end
